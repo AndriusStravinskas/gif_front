@@ -1,3 +1,43 @@
-.App {
-  background-color: red;
+body {
+  padding: 50px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.f-column {
+  flex-direction: column;
+}
+
+.center {
+  align-items: center;
+}
+
+.g-3 {
+ gap: 3rem;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.w-300 {
+  width: 300px;
+}
+
+.grow1 {
+  flex: 1
+}
+
+.m-3 {
+  margin: 30px;
+}
+
+.p-3 {
+  padding: 30px;
+}
+
+img {
+  width: 300px;
 }
