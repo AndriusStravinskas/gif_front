@@ -1,0 +1,8 @@
+.gif-form {
+  display: flex;
+  justify-content: center;
+}
+
+.gif-input {
+  width: 500px;
+}
