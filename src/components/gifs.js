@@ -17,8 +17,19 @@ const Gifs = ({ setGifPosts, gifPosts }) => {
   }, [])
 
   const handleClick = async (id) => {
-    nav(`/gif/${id}`)
-  }
+    const userHasSecret = localStorage.getItem('userSecret');
+    if (userHasSecret) {
+      const res = await axios.get(`http://localhost:3800/gif/${id}`);
+      const singleGifUserSecret = res.data.getSingle.userSecret;
+      if (userHasSecret === singleGifUserSecret) {
+        nav(`/gif/${id}`);
+      } else {
+        console.log('Jūs neturite tam teisių');
+      }
+    } else {
+      console.log('Jūs neturite tam teisių');
+    }
+  };
 
   return (
     <div className='gif-container'>
