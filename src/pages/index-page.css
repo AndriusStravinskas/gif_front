@@ -5,3 +5,7 @@
   gap: 2rem;
   align-items: center;
 }
+
+.btn-logout {
+  align-self: end;
+}

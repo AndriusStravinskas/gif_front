@@ -36,7 +36,8 @@ const Gifs = ({ setGifPosts, gifPosts }) => {
 
       {gifPosts.map((gif) => (
       <div className='gif-card' onClick={() => handleClick(gif.id)} key={gif.id}>
-        <img src={gif.url} alt="Gif" />
+        <img src={gif.url ? gif.url : 'https://media.tenor.com/PXOXwsJKbSYAAAAM/where-you.gif'} alt="Gif" />
+        <p>user email</p>
       </div>
       ))}
     </div>

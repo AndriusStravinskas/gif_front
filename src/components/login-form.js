@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom/dist';
 import loginValidationSchema from '../validate-schema/login-validate-Schema';
 
-const LoginForm = () => {
+const LoginForm = ({setEmail}) => {
   const [error, setError] = React.useState('')
   const nav = useNavigate()
 
@@ -26,6 +26,7 @@ const LoginForm = () => {
         localStorage.setItem('userSecret', res.data.secret)
         setError('')
         nav('/gif')
+        setEmail(res.data.loginUserEmail)
       }
     } catch (error) {
       setError(error.message)
@@ -50,6 +51,7 @@ const LoginForm = () => {
             />
             <button type='submit'>Login</button>
             <Link to='/register' variant="body2">Don't have an account? Sign Up</Link>
+            <Link to='/gif' variant="body2">See other user gif</Link>
           </form>
   )
 }

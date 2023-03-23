@@ -1,6 +1,6 @@
 .gif-container {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
   flex-wrap: wrap;
   margin-left: 20px;
   margin-right: 20px;
@@ -9,11 +9,14 @@
 .gif-card {
   width: 250px;
   height: 250px;
-  background-color: red;
   cursor: pointer;
 }
 
 img{
   width: 100%;
-  height: 100%;
+  height: 90%;
+}
+
+.gif-card > p {
+  margin: 0;
 }

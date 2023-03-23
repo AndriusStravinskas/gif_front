@@ -1,12 +1,12 @@
 import React from 'react'
 import LoginForm from '../components/login-form';
 
-const LoginPage = () => {
+const LoginPage = ({setEmail}) => {
 
  
   return (
     <div>
-      <LoginForm />
+      <LoginForm setEmail={setEmail} />
     </div>
   )
 }

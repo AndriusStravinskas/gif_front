@@ -7,15 +7,17 @@ import LoginPage from './pages/login-page';
 import React from 'react';
 
 const App = () => {
-  const [userLogin, setUserLogin] = React.useState(false)
-
+  const [getEmail, setEmail] = React.useState('')
+  const userHasSecret = localStorage.getItem('userSecret')
+  
   return (
       <BrowserRouter>
+      {userHasSecret && <h1 className='w-400 m-0'>{getEmail}</h1>}
       <Routes>
-       <Route path='/gif' element={<IndexPage />} /> 
-       <Route path='/gif/:id' element={<SingleGifPage setUserLogin={setUserLogin} userLogin={userLogin} />} /> 
+       <Route path='/gif' element={<IndexPage userHasSecret={userHasSecret} setEmail={setEmail} getEmail={getEmail} />} /> 
+       <Route path='/gif/:id' element={<SingleGifPage  />} /> 
        <Route path='/register' element={<RegisterPage />} />
-       <Route path='/login' element={<LoginPage />} />
+       <Route path='/login' element={<LoginPage setEmail={setEmail} />} />
       </Routes>
       </BrowserRouter>
   );

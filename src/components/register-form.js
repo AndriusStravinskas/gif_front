@@ -62,7 +62,7 @@ const RegisterForm = () => {
             name="confirm-password"
             />
             <button type='submit'>Register</button>
-            <Link to="/" variant="body2">Already have an account? Sign in</Link>
+            <Link to="/login" variant="body2">Already have an account? Sign in</Link>
           </form>
   )
 }

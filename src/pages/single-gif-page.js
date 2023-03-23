@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import './single-gif-page.css'
 
 
-const SingleGifPage = ({setUserLogin, userLogin}) => {
+const SingleGifPage = () => {
   const {id} = useParams()
   const [SingleGif, setSingleGif] = React.useState([])
   const [newUrl, setNewUrl] = React.useState({url: ''})
@@ -71,7 +71,7 @@ const SingleGifPage = ({setUserLogin, userLogin}) => {
   return (
     <div className='single-gif-container'>
       <div className='gif-img'>
-      <img src={SingleGif.url} alt="" />
+      <img src={SingleGif.url ? SingleGif.url : 'https://media.tenor.com/PXOXwsJKbSYAAAAM/where-you.gif'} alt="" />
       </div>
       <form className='gif-settings-box'>
       <input type="text" value={newUrl.url} onChange={handleChange} name="url" />
